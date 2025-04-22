@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+</head>
+<body>
+    <input type="button" value="Clique aqui" onclick="clicou()">
+    <div id="result"></div>
+
+    <script>
+        function clicou() {
+            r = document.getElementById('result')
+            r.innerHTML += '<p>Você clicou!</p>'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número PI</title>
+</head>
+<body>
+    <p>Número de lados:</p>
+    <input id="Nlados" type="number">
+    <input type="submit" value="Calcular" onclick="Calcular()">
+    <h1 id="resultado">PI ~= ?</h1>
+
+    <script>
+        function Calcular() {
+            let nl = document.querySelector('input#Nlados').value
+            let result = document.querySelector('h1#resultado')
+            
+            let â = 360/nl
+            let senÂ = Math.sin(â*Math.PI/180).toFixed(100)
+            let cosÂ = Math.cos(â*Math.PI/180).toFixed(100)
+            let senÂ2 = (senÂ**2)
+            let cosÂ2 = ((1 - cosÂ)**2)
+            let x = (senÂ2 + cosÂ2).toFixed(100)
+            let pi = ((x**(1/2)/2)*nl).toFixed(52)
+            let Pi = Math.PI.toFixed(100)
+
+            result.innerHTML = `PI ~= ${Pi}`
+        }
+    </script>
+</body>
+</html>

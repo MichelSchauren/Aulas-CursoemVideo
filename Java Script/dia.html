@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas do dia</title>
+    <style>
+        body {
+            text-align: center;
+            color: white;
+        }
+        div {
+            margin: auto;
+            border-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            background-color: white;
+            width: 350px;
+            height: 250px;
+        }
+        p#h {
+            color: black;
+        }
+        h2#d {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Horas do dia</h1>
+    <div>
+        <p id="h">Agora são ?? horas</p>
+        <img id="i">
+    </div>
+        <h2 id="d"></h2>
+        <p>@MicheldaQuebrada</p>
+    <script>
+        var horas = new Date().getHours()
+        var h = document.querySelector('p#h')
+        var i = document.querySelector('img#i')
+        h.innerHTML = `Agora são ${horas} horas`
+        if (horas > 6 && horas < 12) {
+            document.body.style.background = 'rgb(220, 220, 120)'
+            i.src="Imagens/Amanhecer.png"
+        }
+        else if (horas < 18 && horas > 12) {
+            document.body.style.background = 'rgb(255, 180, 95)'
+            i.src="Imagens/Intardecer.png"
+        }
+        else if (horas < 24 && horas > 18) {
+            document.body.style.background = 'rgb(37, 37, 37)'
+            i.src="Imagens/Noite.jpg"
+        }
+        else {
+            var dormir = document.querySelector('h2#d')
+            document.body.style.background = 'black'
+            i.src="Imagens/Vai dormir.webp"
+            dormir.innerHTML = 'VAI DORMIR PORRAAA!!!'
+        }
+    </script>
+</body>
+</html>

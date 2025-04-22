@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de números</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        select#sel {
+            width: 150pt;
+        }
+        div#fres {
+            width: 380px;
+        }
+        input#ap {
+            background-color: rgb(255, 53, 53);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Analizador de números</h2>
+    <div>
+        <p>Número de 1 a 100: <input type="number" id="fnum"> <input type="submit" value="Analizar" onclick="analizar()"></p>
+        <select id="sel" size="6"></select>
+        <p><input type="submit" value="Finalizar" onclick="finalizar()"> <input type="submit" id="ap" value="Apagar &#x1F5D1;" onclick="apagar()"></p>
+        <div id="fres"></div>
+    </div>
+    <p>@Michel</p>
+    <script>
+       let num = document.querySelector('input#fnum')
+       let s = document.querySelector('select#sel')
+       let res = document.querySelector('div#fres')
+       let valores = []
+        
+       function isNumero(n) {
+        if (n >= 1 && n <=100) {
+            return true
+        }
+        else {
+            return false
+        }
+       }
+
+       function isLista(n, l) {
+        if (l.indexOf(Number(n)) != -1) {
+            return true
+        }
+        else {
+            return false
+        }
+       }
+
+       function analizar() {
+        num.focus()
+        res.innerHTML = null
+        if (isNumero(num.value) && !isLista(num.value, valores)) {
+            valores.push(Number(num.value))
+            var noption = document.createElement('option')
+            noption.text = `Número ${num.value} registrado.`
+            s.appendChild(noption)
+        }
+        else {
+            alert('ERRO! O número já foi registrado ou não cumpre todos os requisitos')
+        }
+        num.value = ''
+       }
+       function finalizar() {
+        res.innerHTML = ''
+      
+        let quantos = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+
+        for(let pos = 0; pos < quantos; pos++) {
+            soma += valores[pos]
+            if (valores[pos] > maior) {
+                maior = valores[pos]
+            }
+            if (valores[pos] < menor) {
+                menor = valores[pos]
+            }
+        }
+
+        res.innerHTML += `<p>Há ${quantos} valores registrados.<p>`
+        res.innerHTML += `<p>O maior valor é ${maior}.<p>`
+        res.innerHTML += `<p>O menor valor é ${menor}.<p>`
+        res.innerHTML += `<p>A soma de totos os valores é ${soma}.<p>`
+        res.innerHTML += `<p>A média dos valores é ${soma/quantos}.<p>`
+        }
+            function apagar() {
+            num.value = ''
+            s.innerHTML = ''
+            res.innerHTML = ''
+            num.focus()
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs em formulários</title>
+</head>
+<body>
+    <h1>Inputs em formulários</h1>
+    <!--
+    Métodos dos inputs:
+        size="" = define o tamanho da caixa de input.
+        placeholder="" = mostra um pequeno texto dentro da caixa de input.
+        required="" = obriga o úsuario a preencher a caixa de input.
+        minlength="" ou maxlength="" = define o minimo e máximo de caracteres que podem ser digitados.
+        autocomplete="" = define o tipo de informação Ex: usuario, senha etc...
+        step="" = define de quanto em quanto vão ser os números Obs: Só funciona em inputs de tipo number.
+        value="" = define um valor padrão para a caixa de input.
+        pattern="" = define algumas restrições para o preenchimento da caixa de input.
+        checked="" = deixa determinado input radio ou checkbox marcado por padrão.
+    -->
+    <form action="cadastro.py" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Aula 4</legend>
+            <p>
+                <label for="iusu">Úsuario: </label>
+                <input type="text" name="usu" id="iusu" size="15" placeholder="Insira o úsuario" required minlength="5" maxlength="30" autocomplete="username">
+            </p>
+            <p>
+                <label for="isen">Senha: </label>
+                <input type="password" name="sen" id="isen" size="10" placeholder="Insira a senha" required minlength="8" maxlength="15" autocomplete="current-password">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Aula 5</legend>
+            <p>
+                <label for="imedia">Média: </label>
+                <input type="number" name="media" id="imedia" placeholder="0 a 10" required min="0" max="10" autocomplete="cc-number" step="0.5">
+            </p>
+            <p>
+                <label for="imes">Período Letivo: </label>
+                <input type="month" name="mes" id="imes" value="2025-04">
+            </p>
+            <p>
+                <label for="idia">Dia da prova: </label>
+                <input type="date" name="dia" id="idia" value="2025-04-15">
+            </p>
+            <p>
+                <label for="ihora">Horário da prova: </label>
+                <input type="time" name="hora" id="ihora">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Aula 7</legend>
+            <p>
+                <label for="iemail">E-mail: </label>
+                <input type="email" name="email" id="iemail" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="itel">Telefone: </label>
+                <input type="tel" name="tel" id="itel" autocomplete="tel" placeholder="(xx)xxxx-xxxx" pattern="^\(\d{2}\)\d{4,5}-\d{4}$">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Aula 8</legend>
+            <fieldset>
+                <legend>Sexo</legend>
+                <p>
+                    <input type="radio" name="sexo" id="msexo">
+                    <label for="msexo">Masculino</label>
+                </p>
+                <p>
+                    <input type="radio" name="sexo" id="fsexo">
+                    <label for="fsexo">Feminino</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Esportes Favoritos</legend>
+                <p>
+                    <input type="checkbox" name="esfut" id="iesfut">
+                    <label for="iesfut">Futebol</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="esbas" id="iesbas">
+                    <label for="iesbas">Basquete</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="esnat" id="iesnat">
+                    <label for="iesnat">Natação</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="esten" id="iesten">
+                    <label for="iesten">Tênis</label>
+                </p>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>Aula 9</legend>
+            <p>
+                <label for="icor">Cor: </label>
+                <input type="color" name="cor" id="icor" value="#00ff00">
+            </p>
+            <p>
+                <label for="isat">Nível de satisfação: </label>
+                <input type="range" name="sat" id="isat" min="0" max="10" value="0" oninput="outsat.innerHTML = Number(isat.value)">
+                <output id="outsat">0</output>
+            </p>
+            <p>
+                <label for="ifot">Foto de perfil: </label>
+                <input type="file" name="fot" id="ifot">
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar"> <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>

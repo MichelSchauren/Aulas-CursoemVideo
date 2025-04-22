@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel programas</title>
+    <style>
+        button#gremio {
+            font: 20pt Arial;
+            background: blue;
+            color: rgb(0, 0, 0);
+            width: 500px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+        button#inter {
+            font: 20pt Arial;
+            background: red;
+            color:rgb(0, 0, 0);
+            width: 500px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quem é o maior do Sul?</h2>
+    <button id="gremio" onclick="clicar(true)" onmouseover="entrar(true)" onmouseout="sair(true)">
+        Grêmio
+    </button>
+    <button id="inter" onclick="clicar(false)" onmouseover="entrar(false)" onmouseout="sair(false)">
+        Internacional
+    </button>
+    <script>
+        var g = window.document.getElementById("gremio")
+        var i = window.document.getElementById("inter")
+        function clicar(x) {
+            if (x) {
+                g.innerHTML = ('Acertou misaravi! :)')
+            }
+            else {
+                i.innerHTML = ('Errrrroooooooouuuuu!!!')
+            }
+        }
+        function entrar(x) {
+            if (x) {
+                g.style.background = ('rgb(0, 0, 255, 0.7)')
+            }
+            else {
+                i.style.backgroundColor = ('rgb(255, 0, 0, 0.7)')
+            }
+        }
+        function sair(x) {
+            if (x) {
+                g.style.background = ('blue')
+            }
+            else {
+                i.style.backgroundColor = ('red')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo a usar tabelas</title>
+    <style>
+        body {
+            background-color: rgba(185, 185, 185, 0.39);
+        }
+        table {
+            width: 1000px;
+            border: 1px, solid, black;
+        }
+        td {
+            border: 1px, solid, black;
+            padding: 20px;
+            text-align: center;
+        }
+        thead {
+            font-weight: bold;
+        }
+        th {
+            border: 1px, solid, black;
+            padding: 5px;
+        }
+        #d1 {background-color: red;}
+        #d2 {background-color: orangered;}
+        #d3 {background-color: yellow;}
+        #d4 {background-color: green;}
+        #d5 {background-color: blue;}
+        .d1 {background-color: rgba(255, 0, 0, 0.5);}
+        .d2 {background-color: rgba(255, 68, 0, 0.5);}
+        .d3 {background-color: rgba(255, 255, 0, 0.5);}
+        .d4 {background-color: rgba(0, 128, 0, 0.5);}
+        .d5 {background-color: rgba(0, 0, 255, 0.5);}
+        input {
+            background-color: initial;
+            border: 0px, solid, black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <h1>Tabela de Investimentos</h1>
+        <thead>
+            <tr>
+                <th scope="col" id="d1">Criptomoedas</th>
+                <th scope="col" id="d2">Ações</th>
+                <th scope="col" id="d3">ETFs</th>
+                <th scope="col" id="d4">FIIs</th>
+                <th scope="col" id="d5">Renda Fixa</th>
+            </tr>
+        </thead>
+        <tr>
+            <td class="d1"><input type="text"></td>
+            <td class="d2"><input type="text"></td>
+            <td class="d3"><input type="text"></td>
+            <td class="d4"><input type="text"></td>
+            <td class="d5"><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="d1"><input type="text"></td>
+            <td class="d2"><input type="text"></td>
+            <td class="d3"><input type="text"></td>
+            <td class="d4"><input type="text"></td>
+            <td class="d5"><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="d1"><input type="text"></td>
+            <td class="d2"><input type="text"></td>
+            <td class="d3"><input type="text"></td>
+            <td class="d4"><input type="text"></td>
+            <td class="d5"><input type="text"></td>
+        </tr>
+    </table>
+    <script></script>
+</body>
+</html>

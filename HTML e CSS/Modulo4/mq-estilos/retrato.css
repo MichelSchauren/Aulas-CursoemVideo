@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/*Aparelho de pé (portrait)*/
+
+body {
+    background-color: green;
+    background-image: url(../imagens/guana6.png);
+}

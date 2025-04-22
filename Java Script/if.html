@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h2 id="horas">Horas</h2>
+    <p id="bom">...</p>
+    <h2>Qual é a sua idade?</h2>
+    <input type="number" id="idade">
+    <input type="button" value="Ok" id="ok">
+    <p id="per">...</p>
+    <script>
+        var o = document.querySelector('input#ok')
+        var p = document.querySelector('p#per')
+        o.addEventListener('click', clicou)
+        function clicou() {
+            var idade= Number(document.querySelector('input#idade').value)
+        if (idade >= 18 && idade < 120) {
+            p.innerHTML = 'Seja bem vindo ao nosso site.'
+        }
+        else {
+            if (idade < 120) {
+                if (idade > 0) {
+                    p.innerHTML = 'Infelismente você é muito novo para acessar o nosso site.'
+                }
+                else {
+                    p.innerHTML = 'Detectamos que você ainda não nasceu, portanto não poderá acessar o nosso site.'
+                }
+            }
+            else {
+                p.innerHTML = 'Detectamos que você provavelmente está morto ou é algum tipo de fantasma ou entidade mística, portanto não poderá acessar o nosso site.'
+            }
+        }
+        }
+        var bom = document.querySelector('p#bom')
+        var h = document.querySelector('h2#horas')
+        var horas = new Date().getHours()
+        var minutos = new Date().getMinutes()
+        h.innerHTML = `Agora são ${horas} horas e ${minutos} minutos`
+        if (horas > 6 && horas < 12) {bom.innerHTML = 'Bom dia'}
+        else if (horas > 12 && horas < 18) {bom.innerHTML = 'Boa tarde'}
+        else if (horas > 18 && horas < 24) {bom.innerHTML = 'Boa noite'}
+        else {bom.innerHTML = 'Boa madrugada'}
+    </script>
+</body>
+</html>

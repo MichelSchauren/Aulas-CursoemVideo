@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        body {
+            background-color: rgb(90, 90, 250);
+            color: white;
+            text-align: center;
+        }
+        div {
+            text-align: left;
+            background-color: white;
+            color: black;
+            margin: auto;
+            border-radius: 10px;
+            width: 400px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <div>
+        <p>Ano de Nascimento: <input type="number" id="ano"></p>
+        <p>Sexo: <input type="radio" id="masculino" name="genero"><label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="genero"><label for="feminino">Feminino</label></p>
+        <input type="submit" value="Mostrar" id="mostrar">
+        <p id="res"></p>
+        <img id="foto">
+        <script>
+            var r = document.querySelector('p#res')
+            var m = document.querySelector('input#mostrar')
+            m.addEventListener('click', clicou)
+            function clicou() {
+                var ano = new Date().getFullYear()
+                var g = document.querySelector('input[name="genero"]:checked').id
+                var n = document.querySelector('input#ano').value
+                var nascimento = ano - n
+                var imagem = document.querySelector('img#foto')
+                if (m.value === 'Mostrar') {
+                    m.value = 'Voltar'
+                    if (g === "masculino") {
+                        var genero = 'um homem' 
+                    }
+                    else if (g === 'feminino') {
+                        var genero = 'uma mulher'
+                    }
+                    r.innerHTML = `Você é ${genero} de ${nascimento} anos.`
+                    if (n > ano || n < 0) {
+                        r.innerHTML = 'Algo deu errado, verifique se as informações estão preenchidas corretamente!'
+                    }
+                    if (n == 2009 && g === "masculino") {
+                        imagem.src = 'Imagens/Amanhecer.png'
+                    }
+                }
+                else {
+                    m.value = 'Mostrar'
+                    r.innerHTML = null
+                }
+            }
+        </script>
+    </div>
+    <p>@MicheldaQuebrada</p>
+</body>
+</html>

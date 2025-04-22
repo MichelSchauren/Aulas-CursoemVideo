@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos contar</title>
+    <style>
+        body {
+        background-color: rgb(90, 90, 250);
+        color: white;
+        text-align: center;
+        }
+        div {
+            text-align: left;
+            background-color: white;
+            color: black;
+            margin: auto;
+            border-radius: 10px;
+            width: 400px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vamos contar</h1>
+    <div>
+        <p>Início: <input type="number" id="in"></p>
+        <p>Fim: <input type="number" id="fim"></p>
+        <p>Contagem: <input type="number" id="con"></p>
+        <input type="submit" id="contar" value="Contar">
+        <p id="res"></p>
+    </div>
+    <p>@Michelomaiorprogramador/hakerqueessemundojaviu</p>
+    <script>
+        var res = document.querySelector('p#res')
+        var b = document.querySelector('input#contar')
+        b.addEventListener('click', contar)
+        function contar() {
+            if (b.value === "Contar") {
+                var ini = document.querySelector('input#in')
+                var fim = document.querySelector('input#fim')
+                var con = document.querySelector('input#con')
+                var i = Number(ini.value)
+                var f = Number(fim.value)
+                var c = Number(con.value)
+                if (i === 0 || f === 0 || c <= 0) {
+                    alert('ERRO!!! Você não colocou todas as informações.')
+                }
+                else {
+                b.value = 'Voltar'
+                res.innerHTML = `&#x1F449; ${i}`
+                while ( i < f ) {
+                    i += c
+                    res.innerHTML += '&#x1F449;' + i
+                }
+                }
+            } else {
+                b.value = 'Contar'
+                res.innerHTML = null
+            }
+            
+        }
+    </script>
+</body>
+</html>

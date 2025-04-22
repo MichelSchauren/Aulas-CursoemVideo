@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N de Euler</title>
+</head>
+<body>
+    <input type="number" id="num">
+    <input type="submit" id="calc" value="Calcular">
+    <p id="res"></p>
+    <script>
+        let c = document.querySelector('input#calc')
+        let r = document.querySelector('p#res')
+        c.addEventListener('click', calcular)
+        function calcular() {
+            let n = document.querySelector('input#num').value
+            let e = 1
+            let l = 1
+            while (l <= n) {
+                p = l
+                lF = l
+                while (p > 2) {
+                    lF = lF*(p-1)
+                    p = p - 1
+                }
+                e = (e + 1/lF)
+                l ++
+            }
+            r.innerHTML = e
+        }
+    </script>
+</body>
+</html>

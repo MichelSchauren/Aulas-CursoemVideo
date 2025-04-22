@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Michel</title>
+    <style>
+        body {
+            background-color: rgb(95, 95, 95);
+        }
+        div#calculadora {
+            background-color: rgb(74, 241, 7);
+            border-radius: 50px;
+            border: 3px solid black;
+            border-color: black;
+            margin: auto;
+            width: 400px;
+            height: 600px;
+            text-align: center;
+        }
+        div#res {
+            background-color: white;
+            border-radius: 10px;
+            border: 2px solid black;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            width: 330px;
+            height: 50px;
+            text-align: end;
+            padding: 10px;
+        }
+        .numeros {
+            background-color: white;
+            width: 70px;
+            height: 70px;
+        }
+        footer#footer {
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <div id="res"><h2 id="hres"></h2></div>
+        <p>
+            <button class="numeros" onclick="ApagarTudo()">C</button>
+            <button class="numeros" onclick="Operador('%')">%</button>
+            <button class="numeros" onclick="Operador('/')">/</button>
+            <button class="numeros" onclick="Apagar()">⌫</button>
+        </p>
+        <p>
+            <button class="numeros" onclick="Numero('9')">9</button>
+            <button class="numeros" onclick="Numero('8')">8</button>
+            <button class="numeros" onclick="Numero('7')">7</button>
+            <button class="numeros" onclick="Operador('*')">x</button>
+        </p>
+        <p>
+            <button class="numeros" onclick="Numero('6')">6</button>
+            <button class="numeros" onclick="Numero('5')">5</button>
+            <button class="numeros" onclick="Numero('4')">4</button>
+            <button class="numeros" onclick="Operador('-')">-</button>
+        </p>
+        <p>
+            <button class="numeros" onclick="Numero('3')">3</button>
+            <button class="numeros" onclick="Numero('2')">2</button>
+            <button class="numeros" onclick="Numero('1')">1</button>
+            <button class="numeros" onclick="Operador('+')">+</button>
+        </p>
+        <p>
+            <button class="numeros" onclick="">?</button>
+            <button class="numeros" onclick="Numero('0')">0</button>
+            <button class="numeros" onclick="">,</button>
+            <button class="numeros" onclick="CalcResult()">=</button>
+        </p>
+    </div>
+    <footer id="footer"><p>@Michel</p></footer>
+    <script>
+        var res = document.querySelector('h2#hres')
+        var numero = 0
+        var numero2 = 0
+        var operador = ''
+
+        function Numero(num) {
+        if (numero == 0) {
+        numero = num
+        }
+        else {
+           numero += num
+        }
+        MostrarResultado();
+        }
+
+        function Operador(op) {
+            operador = op
+            numero2 = numero
+            numero = 0
+            res.innerHTML = ''
+        }
+
+        function CalcResult() {
+            if (operador == '+') {numero = Number(numero2) + Number(numero)}
+            if (operador == '-') {numero = Number(numero2) - Number(numero)}
+            if (operador == '*') {numero = Number(numero2) * Number(numero)}
+            if (operador == '/') {numero = Number(numero2) / Number(numero)}
+            if (operador == '%') {numero = Number(numero2) / 100 * Number(numero)}
+            MostrarResultado()
+        }
+
+        function MostrarResultado() {
+            res.innerHTML = numero
+        }
+
+        function ApagarTudo() {
+            res.innerHTML = ''
+            numero = 0
+            operador = ''
+        }
+
+        function Apagar() {
+            numero = String(numero).slice(0, numero.length - 1) // não precisa do numero.length
+            MostrarResultado()
+        }
+    </script>
+</body>
+</html>

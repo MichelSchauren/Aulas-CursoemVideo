@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança em iframes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        iframe {
+            border: 1px, solid, black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Segurança em iframes</h1>
+
+    <!--sandbox="sandbox" = Impede que haja qualquer interação entre o site do iframe e o usuário-->
+    <!--referrerpolicy="no-referer" = Impede que o conteúdo dentro do iframe colete informações a respeito do usuário-->
+    <iframe src="pag-extras/pag1.html" frameborder="0" sandbox="sandbox" referrerpolicy="no-referer">
+        <p>Seu navegador não é compativel com isso!</p>
+    </iframe>
+    
+    <br>
+
+    <!--sandbox="allow-..." = Permite apenas determinadas interações. Ex: scripts.-->
+    <iframe src="pag-extras/pag2.html" frameborder="0" sandbox="allow-scripts" referrerpolicy="no-referer">
+        <p>Seu navegador não é compativel com isso!</p>
+    </iframe>
+</body>
+</html>

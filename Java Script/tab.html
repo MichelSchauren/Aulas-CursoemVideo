@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada desafio</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <div>
+        <p>Número:<input type="number" id="num">
+        <input type="submit" id="contar" value="Gerar tabuada"></p>
+        <p id="res">Tabuada:</p>
+        <select id="tab"></select>
+    </div>
+    <p>@Michel</p>
+    <script>
+        var t = document.querySelector('select#tab')
+        var b = document.querySelector('input#contar')
+        b.addEventListener('click', contar)
+        function contar() {
+            var n = document.querySelector('input#num').value
+            var c = 1
+            t.innerHTML = null
+            if (n == 0) {
+                alert('ERRO!')
+            } else {
+               while (c <= 10) {
+                var noption = document.createElement('option')
+                noption.text = `${c} x ${n} = ${c*n}`
+                t.appendChild(noption)
+                c ++
+                } 
+            }
+            
+        }
+    </script>
+</body>
+</html>

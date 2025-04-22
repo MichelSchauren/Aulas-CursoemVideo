@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Meu primeiro formulário</h1>
+    <!--
+    autocomplete="off" = Tira a função de sugestão de nome/senha... do navegador.
+    action="..." = Cadastra a informação em determinado local.
+    method="GET ou POST" = seleciona o método que ira ser utilizado.
+    <label for="...">...</label> = Atribui o texto ao seu devido input.
+    <fieldset> = Agrupamento de dados.
+    <legend> = Título da grupo de dados.
+    -->
+    <form>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <p><label for="inome">Nome: </label><input type="text" name="nome" id="inome"></p>
+            <p><label for="isobrenome">Sobrenome: </label><input type="text" name="sobrenome" id="isobrenome"></p>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</body>
+</html>
