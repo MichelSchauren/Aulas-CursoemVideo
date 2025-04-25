@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/*Mobile First*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --cor1: rgb(1, 54, 1);
+}
+
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: var(--cor1);
+}
+
+main {
+    width: 50vw;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section {
+    height: 70vh;    
+    background-color: white;
+    border-radius: 1em;
+}
+
+img {
+    width: 50vw;
+    border-start-start-radius: 1em;
+    border-start-end-radius: 1em;
+}
+
+#formulario {
+    padding: 1em;
+}
+/*
+.dados {
+    background-color: blueviolet;
+    border-radius: 1em;
+    padding: 0.5em;
+} */

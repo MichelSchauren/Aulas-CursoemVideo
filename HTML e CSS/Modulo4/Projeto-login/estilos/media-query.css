@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/*Demais midias*/
+
+@media screen and (orientation: landscape) {
+
+}
+
+@media screen and (min-width: 768px) {
+    body, html {
+        background-image: linear-gradient(to right, blue, yellow);
+    }
+
+    main {
+        width: 80vw;
+    }
+
+    section#login {
+        display: flex;
+    }
+
+    img {
+        width: auto;
+        border-start-end-radius: 0em;
+        border-end-start-radius: 1em;
+    }
+}

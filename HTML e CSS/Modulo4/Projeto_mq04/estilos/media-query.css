@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*Todas as demais mídias*/
+
+/* Typical Defice breakpoints
+-----------------------------
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+Tablet: de 768px até 992px
+Desktop: de 992px até 1200px
+Grandes telas: maior que 1200px
+*/
+
+@media print { /* Impressora*/
+    body, html {
+        background-image: url(../imagens/back-impressora.jpg);
+    }
+    main { border: 1px solid black; }
+    main h1 { color: black; font-family: 'Courier New', Courier, monospace; text-shadow: none;}
+    img#print { display: block; }
+    img#tablet, img#celular, img#tv, img#pc { display: none; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { /*Tablet*/
+    body, html {
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+    img#tablet { display: block; }
+    img#celular, img#print, img#tv, img#pc { display: none; }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { /*Desktop*/
+    body, html {
+        background-image: url(../imagens/back-pc.jpg);
+    }
+    img#pc { display: block; }
+    img#tablet, img#print, img#tv, img#celular { display: none; }
+}
+
+@media screen and (min-width: 1200px) { /*Telas Grandes*/
+    body, html {
+        background-image: url(../imagens/back-tv.jpg);
+    }
+    img#tv { display: block; }
+    img#tablet, img#print, img#celular, img#pc { display: none; }
+}
