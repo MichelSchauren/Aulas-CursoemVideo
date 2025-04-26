@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="estilos/style.css" media="all">
     <link rel="stylesheet" href="estilos/media-query.css">
 </head>
-<body onresize="mudarImagem()">
+<body>
     <main>
         <section id="login">
             <div id="imagem">
-                <img src="imagens/img_login_mobile.png" alt="Imagem" id="idimagem">
+                <!--imagem-->
             </div>
             <div id="formulario">
-                <h2>Login</h2>
+                <h1>Login</h1>
                 <p>Seja bem-vindo(a) novamente. Faça login para poder acessar sua conta e fazer as configurações no seu ambiente.</p>
                 <form action="login.php" method="post">
-                    <!--<div class="dados">
+                    <div class="dados">
                         <label for="iemail"><i class="material-symbols-outlined">person</i></label>
                         <input type="email" name="email" id="iemail" size="14">
                     </div>
@@ -26,19 +26,9 @@
                         <label for="isenha"><i class="material-symbols-outlined">key</i></label>
                         <input type="password" name="senha" id="isenha" size="10">
                     </div>
-                </form>-->
+                </form>
             </div>
         </section>
     </main>
-    <script>
-        let imagem = document.querySelector('img#idimagem')
-        function mudarImagem() {
-            if (window.innerWidth >= 768) {
-                imagem.src = 'imagens/img_login_query.png'
-            } else {
-                imagem.src = 'imagens/img_login_mobile.png'
-            }
-        }
-    </script>
 </body>
 </html>

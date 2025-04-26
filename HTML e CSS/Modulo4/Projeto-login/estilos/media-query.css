@@ -3,25 +3,40 @@
 /*Demais midias*/
 
 @media screen and (orientation: landscape) {
-
+    body, html {
+        background-image: linear-gradient(to bottom right, var(--cor1), var(--cor2));
+    }
 }
 
-@media screen and (min-width: 768px) {
-    body, html {
-        background-image: linear-gradient(to right, blue, yellow);
-    }
-
-    main {
-        width: 80vw;
-    }
-
+@media screen and (min-width: 768px) and (max-width: 998px) {
     section#login {
-        display: flex;
+        width: 80vw;
+        height: 398px;
     }
 
-    img {
-        width: auto;
-        border-start-end-radius: 0em;
-        border-end-start-radius: 1em;
+    section#login div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+        background-image: url(../imagens/img_login_query.png);
+    }
+
+    section#login div#formulario {
+        width: 62%;
+        float: right;
+    }
+}
+
+@media screen and (min-width: 998px) {
+    section#login {
+        width: 80vw;
+        height: 398px;
+    }
+
+    section#login div#imagem {
+        float: right;
+        width: 20%;
+        height: 100%;
+        background-image: url(../imagens/img_login_query.png);
     }
 }
