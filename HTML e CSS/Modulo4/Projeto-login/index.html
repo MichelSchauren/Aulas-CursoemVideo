@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Login</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css" media="all">
     <link rel="stylesheet" href="estilos/media-query.css">
 </head>
@@ -16,16 +17,18 @@
             </div>
             <div id="formulario">
                 <h1>Login</h1>
-                <p>Seja bem-vindo(a) novamente. Faça login para poder acessar sua conta e fazer as configurações no seu ambiente.</p>
+                <p>Seja bem-vindo(a) novamente. Faça login para acessar sua conta e fazer as configurações no seu ambiente.</p>
                 <form action="login.php" method="post">
                     <div class="dados">
-                        <label for="iemail"><i class="material-symbols-outlined">person</i></label>
-                        <input type="email" name="email" id="iemail" size="14">
+                        <label for="iemail"><span class="material-icons">person</span></label>
+                        <input type="email" name="email" id="iemail" required autocomplete="email" placeholder="Seu e-mail">
                     </div>
                     <div class="dados">
-                        <label for="isenha"><i class="material-symbols-outlined">key</i></label>
-                        <input type="password" name="senha" id="isenha" size="10">
+                        <label for="isenha"><span class="material-icons">key</span></label>
+                        <input type="password" name="senha" id="isenha" required autocomplete="current-password" placeholder="Sua senha" minlength="8" maxlength="15">
                     </div>
+                        <input type="submit" value="Entrar" id="entrar" class="dados">
+                        <input type="submit" value="Esqueci a senha &#x1F4E7" id="esquecisenha" class="dados">
                 </form>
             </div>
         </section>
