@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex/Flexbox</title>
+    <style>
+        div.container {
+            background-color: lightblue;
+
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: row wrap;
+        }
+
+        div.item {
+            background-color: lightgreen;
+            border: 1px solid black;
+            padding: 1em;
+            text-align: center;
+
+            flex: auto;
+        }
+
+        main {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+
+            width: 80vw;
+            height: 80vh;
+            background-color: lightblue;
+        }
+
+        section {
+            width: 150px;
+            height: 150px;
+            background-color: lightgreen;
+            text-align: center;
+        }
+        /* Anotações */
+        /*
+        Justify-content: Alinha os items no eixo principal/horizontal.
+        - flex-start = alinha os itens no início do main-axis.
+        - flex-end = alinha os itens no fim do main-axis.
+        - flex-center = alinha os itens no centro do main-axis. 
+        - space-between = [i-i-i] 
+        - space-evenly = [-i-i-i-]
+        - space-around = [-i--i--i-]
+
+        Align-items: Alinha os items no eixo transversal/vertical.
+        - stretch = estica os items em relação ao cross-axis.
+        - flex-start = alinha os items no ínicio do cross-axis.
+        - flex-end = alinha os items no fim do cross-axis.
+        - flex-center = alinha os items no centro do cross-axis.
+
+        Align-content: Alinha os items no eixo transversal/vertical,
+        porém só quando os items estão empacotados.
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Bloco A</div>
+        <div class="item">Bloco B</div>
+        <div class="item">Bloco C</div>
+        <div class="item">Bloco D</div>
+        <div class="item">Bloco E</div>
+        <div class="item">Bloco F</div>
+        <div class="item">Bloco G</div>
+    </div>
+    <br>
+    <main>
+        <section>
+            <h1>Centralização com display flex</h1>
+        </section>
+    </main>
+</body>
+</html>

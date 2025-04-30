@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        body, html {
+            background-color: lightblue;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            width: 60vw;
+            height: 30vh;
+
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+
+        .item {
+            background-color: lightyellow;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid rgb(119, 119, 0);
+            border-radius: 10px;
+            text-align: center;
+        }
+        div#i1 {
+            order: 1;
+            align-self: auto;
+        }
+        div#i2 {
+            order: -5;
+            align-self: flex-start;
+        }
+        div#i3 {
+            order: -1;
+            align-self: flex-end;
+        }
+        div#i4 {
+            order: 4;
+            align-self: center;
+        }        
+        div#i5 {
+            order: 3;
+            align-self: stretch;
+        }
+        /*-----------------------------*/
+        .item2 {
+            background-color: lightyellow;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid rgb(119, 119, 0);
+            border-radius: 10px;
+            text-align: center;
+            flex-basis: 200px;
+        }
+        /*------------------------------*/
+        .container2 {
+            display: flex;
+            flex-flow: row nowrap;
+
+            background-color: lightsalmon;
+        }
+        .item3 {
+            background-color: lightgreen;
+            border: 1px solid black;
+            padding: 10px;
+            flex-basis: 250px;
+        }
+
+        /*
+        Configurações do item:
+            order: NÚMERO; = determina a ordem dos items.
+
+            align-self: ; = define um align-items expecífico para cada item.
+
+            flex-basis: ; = define um tamanho padrão para o item, pórem se não couber mais ele espreme todos os items de maneira igualitária.
+            flex-shrink: 1; = item pode crescer.
+            flex-grow: 0; = item não pode diminuir.
+
+            flex: [grow] [shrink] [basis]; = transforma 3 linhas de código em 1.
+            flex: 0 1 auto; = flex: initial;
+            flex: 0 0 auto; = flex: none;
+            flex: 1 1 auto; = flex: auto;
+            flex: 3; = flex: 3 1 auto;
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="i1">auto</div>
+        <div class="item" id="i2">flex-start</div>
+        <div class="item" id="i3">flex-end</div>
+        <div class="item" id="i4">center</div>
+        <div class="item" id="i5">stretch</div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="item2">A</div>
+        <div class="item2">BBBBBBB</div>
+        <div class="item2">CCC</div>
+    </div>
+    <br>
+    <div class="container2">
+        <div class="item3" style="flex-shrink: 1; flex-grow: 0;">A</div>
+        <div class="item3" style="flex-shrink: 0; flex-grow: 2;">B</div>
+        <div class="item3" style="flex-shrink: 2; flex-grow: 1;">C</div>
+    </div>
+</body>
+</html>
